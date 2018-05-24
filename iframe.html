@@ -1,0 +1,40 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Iframes</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <script>
+    // read created json and use directory names for iframe source
+    $(function() {
+      var iframes= [];
+      $.getJSON('directory.json', function(data) {
+          $.each(data, function(i, f) {
+              var iframe = "<iframe src='src/" + f.name + "' width='100%' height='300'></iframe>"
+              $(iframe).appendTo("body");
+        });
+      });
+    });
+  </script>
+  <style>
+    iframe{
+      border: 0;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+    }
+    span{
+      font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      margin-bottom: 20px;
+      display: block;
+    }
+  </style>
+</head>
+
+  <body>
+  </body>
+
+</html>
